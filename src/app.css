@@ -1,0 +1,129 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+.kc-app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.kc-canvas {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+/* 自定义工具按钮：放在画布顶部中央（tldraw 默认 UI 此处无元素） */
+.kc-toolbar {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 550;
+  display: flex;
+  gap: 8px;
+}
+
+.kc-btn {
+  border: 1px solid #d8d8d8;
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+}
+
+.kc-btn:hover {
+  background: #f2f2f2;
+}
+
+.kc-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.kc-btn-primary {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  color: #fff;
+}
+
+.kc-btn-primary:hover {
+  background: #1e40af;
+}
+
+/* 待处理请求提示：画布左上角（避开 tldraw 菜单按钮） */
+.kc-badge {
+  position: absolute;
+  left: 60px;
+  top: 8px;
+  z-index: 550;
+  background: #fff7e0;
+  border: 1px solid #f0d060;
+  color: #7a5b00;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+}
+
+.kc-toast {
+  position: absolute;
+  bottom: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 900;
+  background: #222;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  pointer-events: none;
+}
+
+/* 画布下方的 AI 生成面板 */
+.kc-panel {
+  border-top: 1px solid #e5e5e5;
+  background: #fafafa;
+  padding: 10px 16px;
+}
+
+.kc-panel-title {
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.kc-prompt {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 13px;
+  font-family: inherit;
+}
+
+.kc-panel-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.kc-panel-row select {
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #d8d8d8;
+  max-width: 220px;
+}

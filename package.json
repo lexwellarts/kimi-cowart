@@ -1,0 +1,26 @@
+{
+  "name": "kimi-cowart",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Kimi Cowart —— 给 Kimi Work 用的无限画布协作工具（浏览器画布 + Agent 文件协作）",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "tldraw": "^5.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "@vitejs/plugin-react": "^6.1.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.2"
+  }
+}

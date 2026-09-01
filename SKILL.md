@@ -92,7 +92,7 @@ canvas/
 
 - 每条 record 都有 `id`、`typeName`、`meta`；shape 还有 `x/y/rotation/isLocked/opacity/parentId/index/props`。
 - `parentId` 必须是当前页 id：在 `store` 里找 `typeName === "page"` 的记录（通常叫 `page:page`），用它的 `id`。
-- `index` 是分式索引字符串（如 `"a1"`、`"a2"`），同层记录里保持唯一且按字典序递增即可；取已有最大 index 之后的一个值（如已有最大为 `"a4"` 则用 `"a5"`）。
+- `index` 是分式索引字符串（如 `"a1"`、`"a2"`），**只有 shape 记录需要**，asset 记录不能带 `index`（v5 校验会报 Unexpected property 导致整个快照加载失败）；同层 shape 里保持唯一且按字典序递增即可；取已有最大 index 之后的一个值（如已有最大为 `"a4"` 则用 `"a5"`）。
 - asset 的 `props.src` 写 `/api/assets/ai-<请求id>.png`（与文件名一致），`props.w/h` 写图片真实像素尺寸。
 - shape 的 `props.w/h` 用 `frame`/`bounds` 里的画布尺寸（保持占位框大小，图片按比例填充）。
 
@@ -113,8 +113,7 @@ asset 记录（key 为 `asset:ai-req-xxx`）：
     "mimeType": "image/png",
     "isAnimated": false
   },
-  "meta": {},
-  "index": "a9"
+  "meta": {}
 }
 ```
 
